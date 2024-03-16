@@ -15,7 +15,7 @@
 	import { Toaster } from "./components/widgets";
 	import { setContext } from "svelte";
 
-	document.title = "Wordle+ | An infinite word guessing game";
+	document.title = "Todos los dias una palabra, only for piberío bionico.";
 </script>
 
 <script lang="ts">

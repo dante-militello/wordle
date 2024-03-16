@@ -14,23 +14,24 @@
 <div class="ctx-menu" style="top: {y}px; left: {x}px;">
 	{#if word !== ""}
 		<div>
-			Considering all hints, this row had:
+			Teniendo en cuenta todas las pistas, esta fila tuvo:
 			<br /><br />
-			{pAns} possible answer{pAns > 1 ? "s" : ""}
+			{pAns} respuesta{pAns > 1 ? "s posible" : " posible"}
 			<br />
-			{pSols} valid guess{pSols > 1 ? "es" : ""}
+			{pSols} suposición{pSols > 1 ? "es válida" : " válida"}
 		</div>
 		<Definition {word} alternates={1} />
 	{:else}
 		<div>
-			Considering all hints, there {pAns > 1 ? "are" : "is"}:
+			Teniendo en cuenta todas las pistas, {pAns > 1 ? "hay" : "hay"}:
 			<br /><br />
-			{pAns} possible answer{pAns > 1 ? "s" : ""}
+			{pAns} respuesta{pAns > 1 ? "s" : ""}
 			<br />
-			{pSols} valid guess{pSols > 1 ? "es" : ""}
+			{pSols} suposición{pSols > 1 ? "es válidas" : " válida"}
 		</div>
 	{/if}
 </div>
+
 
 <style lang="scss">
 	.ctx-menu {

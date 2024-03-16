@@ -57,7 +57,7 @@
 
 	function submitWord() {
 		if (game.latestWord.length !== COLS) {
-			toaster.pop("Not enough letters");
+			toaster.pop("Faltan letras");
 			board.shake(game.guesses);
 		} else if (words.contains(game.latestWord)) {
 			if (game.guesses > 0) {
@@ -65,12 +65,12 @@
 				if ($settings.hard[$mode]) {
 					if (hm.type === "🟩") {
 						toaster.pop(
-							`${contractNum(hm.pos + 1)} letter must be ${hm.char.toUpperCase()}`
+							`${contractNum(hm.pos + 1)} letra debe ser ${hm.char.toUpperCase()}`
 						);
 						board.shake(game.guesses);
 						return;
 					} else if (hm.type === "🟨") {
-						toaster.pop(`Guess must contain ${hm.char.toUpperCase()}`);
+						toaster.pop(`Debe contener ${hm.char.toUpperCase()}`);
 						board.shake(game.guesses);
 						return;
 					}
@@ -85,7 +85,7 @@
 			if (game.lastWord === word) win();
 			else if (game.guesses === ROWS) lose();
 		} else {
-			toaster.pop("Not in word list");
+			toaster.pop("No está entre las palabras.");
 			board.shake(game.guesses);
 		}
 	}
@@ -237,9 +237,9 @@
 <Modal fullscreen={true} bind:visible={showSettings}>
 	<Settings state={game} on:historical={() => (showHistorical = true)} />
 	{#if game.active}
-		<div class="button concede" on:click={concede} on:keydown={concede}>give up</div>
+		<div class="button concede" on:click={concede} on:keydown={concede}>Rendirme</div>
 	{/if}
-	<Tips change={showSettings} />
+	<!-- <Tips change={showSettings} /> -->
 
 	<svelte:fragment slot="footer">
 		<a href="https://www.nytimes.com/games/wordle/" target="_blank" rel="noreferrer"

@@ -9,7 +9,7 @@
 
 	async function getWordData(word: string): Promise<DictionaryEntry> {
 		if (!cache.has(word)) {
-			const data = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`, {
+			const data = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/es/${word}`, {
 				mode: "cors",
 			});
 			if (data.ok) {
@@ -23,25 +23,15 @@
 </script>
 
 <div class="def">
-	{#await getWordData(word)}
-		<h4>Fetching definition...</h4>
-	{:then data}
-		<h2>{word}</h2>
-		<em>{data.meanings[0].partOfSpeech}</em>
-		<ol>
-			{#if word !== data.word}
-				<li>variant of {data.word}.</li>
-			{/if}
-			{#each data.meanings[0].definitions.slice(0, 1 + alternates - (word !== data.word ? 1 : 0)) as def}
-				<li>{def.definition}</li>
-			{/each}
-		</ol>
-	{:catch}
-		<div>Your word was <strong>{word}</strong>. (failed to fetch definition)</div>
-	{/await}
+	<div>La palabra era <strong>{word}</strong></div>
 </div>
 
 <style>
+	.def{
+		margin-top:10px;
+		text-align: center;
+		font-size:20pt;
+	}
 	h2 {
 		display: inline-block;
 		margin-right: 1rem;

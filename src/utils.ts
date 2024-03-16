@@ -130,7 +130,7 @@ export function contractNum(n: number) {
 	}
 }
 
-export const keys = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
+export const keys = ["qwertyuiop", "asdfghjklñ", "zxcvbnm"];
 
 /**
  * Return a deterministic number based on the given mode and current or given time.
@@ -157,7 +157,7 @@ export const modeData: ModeData = {
 	default: GameMode.daily,
 	modes: [
 		{
-			name: "Daily",
+			name: "Diario",
 			unit: ms.DAY,
 			start: 1642370400000,	// 17/01/2022 UTC+2
 			seed: newSeed(GameMode.daily),
@@ -165,23 +165,23 @@ export const modeData: ModeData = {
 			streak: true,
 			useTimeZone: true,
 		},
-		{
-			name: "Hourly",
-			unit: ms.HOUR,
-			start: 1642528800000,	// 18/01/2022 8:00pm UTC+2
-			seed: newSeed(GameMode.hourly),
-			historical: false,
-			icon: "m50,7h100v33c0,40 -35,40 -35,60c0,20 35,20 35,60v33h-100v-33c0,-40 35,-40 35,-60c0,-20 -35,-20 -35,-60z",
-			streak: true,
-		},
-		{
-			name: "Infinite",
-			unit: ms.SECOND,
-			start: 1642428600000,	// 17/01/2022 4:10:00pm UTC+2
-			seed: newSeed(GameMode.infinite),
-			historical: false,
-			icon: "m7,100c0,-50 68,-50 93,0c25,50 93,50 93,0c0,-50 -68,-50 -93,0c-25,50 -93,50 -93,0z",
-		},
+		// {
+		// 	name: "Hourly",
+		// 	unit: ms.HOUR,
+		// 	start: 1642528800000,	// 18/01/2022 8:00pm UTC+2
+		// 	seed: newSeed(GameMode.hourly),
+		// 	historical: false,
+		// 	icon: "m50,7h100v33c0,40 -35,40 -35,60c0,20 35,20 35,60v33h-100v-33c0,-40 35,-40 35,-60c0,-20 -35,-20 -35,-60z",
+		// 	streak: true,
+		// },
+		// {
+		// 	name: "Infinite",
+		// 	unit: ms.SECOND,
+		// 	start: 1642428600000,	// 17/01/2022 4:10:00pm UTC+2
+		// 	seed: newSeed(GameMode.infinite),
+		// 	historical: false,
+		// 	icon: "m7,100c0,-50 68,-50 93,0c25,50 93,50 93,0c0,-50 -68,-50 -93,0c-25,50 -93,50 -93,0z",
+		// },
 		// {
 		// 	name: "Minutely",
 		// 	unit: ms.MINUTE,
@@ -212,12 +212,12 @@ export function seededRandomInt(min: number, max: number, seed: number) {
 export const DELAY_INCREMENT = 200;
 
 export const PRAISE = [
-	"Genius",
-	"Magnificent",
-	"Impressive",
-	"Splendid",
-	"Great",
-	"Phew",
+	"Genial",
+	"Magnífico",
+	"Impresionante",
+	"Espléndido",
+	"Bien",
+	"Piola",
 ];
 
 abstract class Storable {
@@ -411,6 +411,7 @@ export class LetterStates {
 	public l: LetterState = "🔳";
 	public m: LetterState = "🔳";
 	public n: LetterState = "🔳";
+	public ñ: LetterState = "🔳";
 	public o: LetterState = "🔳";
 	public p: LetterState = "🔳";
 	public q: LetterState = "🔳";

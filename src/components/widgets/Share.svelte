@@ -17,12 +17,12 @@
 				.map((r) => r.join(""))
 				.join("\n    ")}\nmikhad.github.io/wordle`
 		);
-		toaster.pop("Copied");
+		toaster.pop("Copiado (pegalo en twitter!)");
 	}
 </script>
 
 <div on:click={copyStats} on:keydown={copyStats}>
-	share
+	Compartilo
 	<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
 		<path
 			fill="white"
