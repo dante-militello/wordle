@@ -212,12 +212,12 @@ export function seededRandomInt(min: number, max: number, seed: number) {
 export const DELAY_INCREMENT = 200;
 
 export const PRAISE = [
-	"Genial",
-	"Magnífico",
-	"Impresionante",
-	"Espléndido",
-	"Bien",
-	"Piola",
+	"⚡ Un verdadero fan ⚡",
+	"Tremendaaa 💕",
+	"Wonderful 🚀",
+	"Beautiful ✨",
+	"Como me desilusionas 😢",
+	"Costó eh.. 💀",
 ];
 
 abstract class Storable {

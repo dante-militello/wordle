@@ -23,10 +23,17 @@
 </script>
 
 <div class="def">
-	<div>La palabra era <strong>{word}</strong></div>
+	<div>La palabra era <strong class="cafe">{word}</strong></div>
+	<br>
+	<h6 class="cafe">Ayudanos a seguir manteniendo estos proyectos:</h6><br>
+
+	<a href='https://cafecito.app/piberio' rel='noopener' target='_blank'><img srcset='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_6.png' alt='Invitame un café en cafecito.app' /></a>
 </div>
 
 <style>
+	.cafe{
+		color:goldenrod;
+	}
 	.def{
 		margin-top:10px;
 		text-align: center;

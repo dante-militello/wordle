@@ -49,8 +49,9 @@
 	<br /><br />
 	Abre el menú de configuración para ver algunas de las características adicionales.
 	<br />
-	Escrito con Svelte, en Typescript por
-	<a href="https://github.com/MikhaD" target="_blank" rel="noreferrer">MikhaD</a>.
+	Programado con Svelte, con Typescript por
+	<a href="https://github.com/MikhaD" target="_blank" rel="noreferrer">MikhaD</a> adaptado para el piberío por
+	<a href="https://twitter.com/dantezor_" target="_blank" rel="noreferrer">Dantezor</a>.
 </div>
 
 <style lang="scss">

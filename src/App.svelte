@@ -15,7 +15,7 @@
 	import { Toaster } from "./components/widgets";
 	import { setContext } from "svelte";
 
-	document.title = "Todos los dias una palabra, only for piberío bionico.";
+	document.title = "Piword | Todos los dias una palabra biónica.";
 </script>
 
 <script lang="ts">

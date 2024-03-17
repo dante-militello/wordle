@@ -39,7 +39,7 @@
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<h1
 	>
-		Piberiword
+		Piword
 	</h1>
 	<div class="icons">
 		{#if showStats}
