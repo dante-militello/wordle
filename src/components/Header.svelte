@@ -63,7 +63,7 @@
 			on:click={() => dispatch("closeTutPopUp")}
 			on:keydown={() => dispatch("closeTutPopUp")}
 		>
-			¿Estas listo para jugar?
+			Todas las palabras fueron extraidas de alguna canción de Chano o Tan Biónica.
 			<span class="ok">SI</span>
 		</div>
 	{/if}

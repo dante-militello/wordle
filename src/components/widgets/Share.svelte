@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type Toaster from "./Toaster.svelte";
-
 	import { mode } from "../../stores";
 	import { failed, modeData, GameState } from "../../utils";
 	import { getContext } from "svelte";
@@ -8,20 +7,23 @@
 	export let state: GameState;
 	const toaster = getContext<Toaster>("toaster");
 
-	function copyStats() {
-		navigator.clipboard.writeText(
-			`${modeData.modes[$mode].name} Wordle+ #${state.wordNumber} ${
+	function shareToTwitter() {
+		const tweetText = encodeURIComponent(
+			`Este fue el resultado de mi frase de Piberiword #${state.wordNumber} \nHice: ${
 				failed(state) ? "X" : state.guesses
 			}/${state.board.words.length}\n\n    ${state.board.state
 				.slice(0, state.guesses)
 				.map((r) => r.join(""))
-				.join("\n    ")}\nmikhad.github.io/wordle`
+				.join("\n    ")}\n\n Juga vos en: word.piberio.com`
 		);
-		toaster.pop("Copiado (pegalo en twitter!)");
+
+		const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;
+		window.open(tweetUrl, '_blank');
+		toaster.pop("¡Listo para compartir en Twitter!");
 	}
 </script>
 
-<div on:click={copyStats} on:keydown={copyStats}>
+<div on:click={shareToTwitter} on:keydown={shareToTwitter}>
 	Compartilo
 	<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
 		<path

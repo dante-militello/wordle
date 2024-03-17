@@ -1,5 +1,5 @@
 export enum GameMode {
-	"daily",
+	"diario",
 	//"hourly",
 	//"infinite",
 	// "minutely",

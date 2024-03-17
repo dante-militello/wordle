@@ -140,7 +140,7 @@ export const keys = ["qwertyuiop", "asdfghjklñ", "zxcvbnm"];
 export function newSeed(mode: GameMode, time?: number) {
 	const now = time ?? Date.now();
 	switch (mode) {
-		case GameMode.daily:
+		case GameMode.diario:
 			// Adds time zone offset to UTC time, calculates how many days that falls after 1/1/1970
 			// and returns the unix time for the beginning of that day.
 			return Date.UTC(1970, 0, 1 + Math.floor((now - (new Date().getTimezoneOffset() * ms.MINUTE)) / ms.DAY));
@@ -154,13 +154,13 @@ export function newSeed(mode: GameMode, time?: number) {
 }
 
 export const modeData: ModeData = {
-	default: GameMode.daily,
+	default: GameMode.diario,
 	modes: [
 		{
 			name: "Diario",
 			unit: ms.DAY,
 			start: 1642370400000,	// 17/01/2022 UTC+2
-			seed: newSeed(GameMode.daily),
+			seed: newSeed(GameMode.diario),
 			historical: false,
 			streak: true,
 			useTimeZone: true,
