@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  piword:
+    image: node:alpine
+    container_name: piword
+    command: sh -c "pnpm install && pnpm run dev"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    working_dir: /app
+    ports:
+      - "4567:4567"
+    environment:
+      - NODE_ENV=development
