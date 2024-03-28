@@ -1,11 +1,18 @@
 # Usamos node:alpine como nuestra imagen base
 FROM node:alpine
 
+# Instalamos pnpm
+RUN npm install
+
 # Establecemos nuestro directorio de trabajo
 WORKDIR /app
 
-# Copiamos el código fuente del servicio al contenedor
+# Copiamos nuestro package.json y pnpm-lock.yaml (si existe)
+COPY package.json ./
+
+# Copiamos el resto de nuestros archivos de código fuente al contenedor
 COPY . .
 
-# Comando para ejecutar el servicio en el puerto 1333
+# Comando para servir la aplicación en el puerto 4567
 CMD ["node", "app.js"]
+
