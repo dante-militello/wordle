@@ -10,7 +10,7 @@ services:
   api_letra:
     build:
       context: .
-      dockerfile: api_letra/dockerfile
+      dockerfile: api_letra/Dockerfile
     container_name: api_letra
     ports:
       - "1333:1333"
