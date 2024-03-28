@@ -9,8 +9,8 @@ services:
       - NODE_ENV=production
   api_letra:
     build:
-      context: .
-      dockerfile: api_letra/Dockerfile
+      context: ./api_letra
+      dockerfile: Dockerfile
     container_name: api_letra
     ports:
       - "1333:1333"

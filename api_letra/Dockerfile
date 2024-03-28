@@ -14,5 +14,4 @@ COPY package.json ./
 COPY . .
 
 # Comando para servir la aplicación en el puerto 4567
-CMD ["node", "app.js"]
-
+CMD ["npm", "start", "app.js"]
