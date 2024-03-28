@@ -1,7 +1,9 @@
 version: '3.8'
 services:
   piword:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: piword
     ports:
       - "4567:4567"
