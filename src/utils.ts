@@ -159,7 +159,7 @@ export const modeData: ModeData = {
 		{
 			name: "Diario",
 			unit: ms.DAY,
-			start: 1642370400000,	// 17/01/2022 UTC+2
+			start: 1711652268000,	// 17/01/2022 UTC+2
 			seed: newSeed(GameMode.diario),
 			historical: false,
 			streak: true,

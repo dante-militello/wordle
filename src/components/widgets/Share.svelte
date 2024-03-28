@@ -9,12 +9,12 @@
 
 	function shareToTwitter() {
 		const tweetText = encodeURIComponent(
-			`⚡ Este fue el resultado de mi frase de Piword #${state.wordNumber}⚡ \nHice: ${
+			`⚡ Piword #${state.wordNumber}⚡ \nMi resultado fue:  ${
 				failed(state) ? "X" : state.guesses
 			}/${state.board.words.length}\n\n    ${state.board.state
 				.slice(0, state.guesses)
 				.map((r) => r.join(""))
-				.join("\n    ")}\n\n Juga vos en: https://piword.piberio.com/ \n#piword`
+				.join("\n    ")}\n\nJugá en: https://piword.piberio.com/ #piword`
 		);
 
 		const tweetUrl = `https://twitter.com/intent/tweet?text=${tweetText}`;

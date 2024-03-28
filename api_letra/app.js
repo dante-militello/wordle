@@ -1,14 +1,16 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors'); // Importa el middleware cors
 
 const app = express();
+app.use(cors()); // Usa el middleware cors para permitir CORS desde cualquier origen
 
 const cancionesDir = path.join(__dirname, 'canciones');
 
 // Definir variables para controlar longitud de texto previo y posterior al fragmento
-const longitudAnterior = 50; // Número de caracteres o palabras antes del fragmento
-const longitudPosterior = 50; // Número de caracteres o palabras después del fragmento
+const longitudAnterior = 40; // Número de caracteres o palabras antes del fragmento
+const longitudPosterior = 40; // Número de caracteres o palabras después del fragmento
 
 function buscarPalabra(palabra) {
     const resultados = [];
@@ -26,13 +28,22 @@ function buscarPalabra(palabra) {
 
             // Utilizar expresión regular para buscar la palabra exacta con límites de palabra
             const regex = new RegExp(`\\b${palabra}\\b`, 'gi');
-            if (regex.test(contenidoLimpio)) {
-                const match = regex.exec(contenidoLimpio);
-                const index = match ? match.index : -1;
-                const inicio = Math.max(index - longitudAnterior, 0);
-                const fin = Math.min(index + palabra.length + longitudPosterior, contenidoLimpio.length);
+            let match;
+            while ((match = regex.exec(contenidoLimpio)) !== null) {
+                const index = match.index;
+                let inicio = Math.max(index - longitudAnterior, 0);
+                let fin = Math.min(index + palabra.length + longitudPosterior, contenidoLimpio.length);
 
-                let fragmento = contenidoLimpio.substring(inicio, fin).replace(regex, `<b>${palabra}</b>`);
+                // Ajustar el fragmento para que termine en una palabra completa
+                while (inicio > 0 && !/\s/.test(contenidoLimpio.charAt(inicio))) {
+                    inicio--;
+                }
+                while (fin < contenidoLimpio.length && !/\s/.test(contenidoLimpio.charAt(fin - 1))) {
+                    fin++;
+                }
+
+                let fragmento = contenidoLimpio.substring(inicio, fin);
+                fragmento = fragmento.replace(new RegExp(palabra, 'gi'), `<span style="color: goldenrod; text-decoration:underline; font-weight:bold">${palabra}</span>`);
                 if (inicio > 0) {
                     fragmento = '...' + fragmento;
                 }
@@ -47,6 +58,8 @@ function buscarPalabra(palabra) {
 
     return resultados;
 }
+
+
 
 
 
