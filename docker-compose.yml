@@ -7,3 +7,12 @@ services:
       - "4567:4567"
     environment:
       - NODE_ENV=production
+  api_letra:
+    build:
+      context: .
+      dockerfile: api_letra/dockerfile
+    container_name: api_letra
+    ports:
+      - "1333:1333"
+    environment:
+      - NODE_ENV=production
