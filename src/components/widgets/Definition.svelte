@@ -7,7 +7,7 @@
 
 	async function getWordData(word) {
     try {
-        const response = await fetch(`http://api.piword.piberio.com/buscar?palabra=amor`, {
+        const response = await fetch(`https://api.piword.piberio.com/buscar?palabra=amor`, {
             mode: "cors",
         });
 
